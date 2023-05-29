@@ -1,7 +1,11 @@
 'use client';
 
 import UsersQuantity from '@/actions/usersQuantity';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { Amplify } from 'aws-amplify';
+import awsExports from '@/aws-exports';
+
+Amplify.configure({ ...awsExports, ssr: true });
 
 interface QuantityInputProps {
   data: number[];
